@@ -1,0 +1,33 @@
+<html>
+<head>
+   <title>
+        LOG IN PAGE
+    </title>
+    <style>
+        body  {
+        background:linear-gradient(coral,#123455);
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        height: 90vh;
+
+        }
+    
+        
+
+    </style>
+</head>
+<body>
+    <form method="POST" action="/blog/allblogs/">
+        <h2 style="text-align: center;">Add your blog here !!</h2>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <!--form.as_table, form.as_li-->
+</body>
+</html>
+
+
+

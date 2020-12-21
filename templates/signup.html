@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Signup Page</title>
+    </head>
+    <style>
+        th, td {
+                padding: 10px;
+                text-align: center;
+            }
+        .container {
+        background:linear-gradient(rgb(106, 80, 255),#f8d1b2);
+        background-color: rgba(192, 231, 220, 0.123);
+        width: 300px;
+        border: 15px solid rgb(240, 242, 243);
+        padding: 50px;
+        margin: 20px;
+        }
+    
+    </style>
+    <body>
+        {% include "index.html" %}
+        {% block head %}
+        {% endblock %}
+        <div class="container">
+            <form method="POST" action="/users/aftersignup/">
+                {% csrf_token %}
+                <table border="0">
+                    <h2 style="text-align: center;">Signup Form</h2>
+                    <td>
+                        {{form}}
+                    </td>
+                </table>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
+<!--form.as_table, form.as_li-->

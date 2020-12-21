@@ -1,0 +1,48 @@
+<html>
+<head>
+   <title>
+        LOG IN PAGE
+    </title>
+    <style>
+    th, td {
+                padding: 10px;
+            }
+        a{
+            text-decoration:none;
+            color: #2d2f31;
+        }
+        .container {
+        background-color:  rgba(192, 231, 220, 0.123);
+        background:linear-gradient(rgb(106, 80, 255),#f8d1b2);
+        width: 300px;
+        border: 15px solid rgb(240, 242, 243);;
+        padding: 50px;
+        margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    {% include "index.html" %}
+    {% block head %}
+    {% endblock %}
+    <div class="container">
+        <form method="POST" action="/blog/addpost/">
+            {% csrf_token %}
+            <table border="0">
+                <h2 style="text-align: center;">Login Form</h2>
+                <td>
+                 {{form}}
+                </td>
+            </table>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a style="color: black;" href="/users/forgot">&nbsp&nbspReset Password?</a>
+        </form>
+    </div>
+    <!--form.as_table, form.as_li-->
+</body>
+</html>
+
+
+

@@ -1,0 +1,94 @@
+<html>
+<head>
+   <title>
+        PROFILE PAGE
+    </title>
+        <script type="text/javascript">
+           function searchdata()
+           {
+               var input,table,tr,td,filter,i,displaydata;
+               input = document.getElementById("searchid");
+               filter = input.value.toUpperCase();
+               table = document.getElementById("table1");
+               tr = table.getElementsByTagName("tr");
+               for(i=0;i<tr.length;i++)
+               {
+                   td = tr[i].getElementsByTagName("td")[0];
+                   if(td)
+                   {
+                       displaydata = td.innerText;
+                       if(displaydata.toUpperCase().indexOf(filter)>-1)
+
+                       {
+                           tr[i].style.display="";
+
+                       }
+                       else
+                       {
+                           tr[i].style.display="none";
+                       }
+                   }
+
+               }
+
+               
+           }        
+        </script>
+
+    <style>
+        body  {
+       
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    {% include "index.html" %}
+    {% block head %}
+    {% endblock %}
+    <form method="POST" action="">
+        <h2 style="text-align: center;">PROFILE PAGE !!</h2><br>
+        <center>
+            <select id="searchid" onclick="searchdata();">
+                <option disabled="true" selected>Select the user :</option>
+                    {% for i in Adduser %}
+                    <option>{{ i.id}}</option>>
+                    {% endfor %}
+                </option>
+            </select>
+            
+    </center>
+
+        <div class="container">
+            <table class="table" id="table1">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fullname</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Action</th>
+                </tr>
+                {% for i in Adduser %}
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ i.id}}</td>
+                    <td>{{ i.fullname}}</td>
+                    <td>{{ i.email}}</td>
+                    <td><a href="/delete/{{i.id}}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+
+    </form>
+    <!--form.as_table, form.as_li-->
+</body>
+</html>
+
+

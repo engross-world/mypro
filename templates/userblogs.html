@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color: coral;
+                font-style: italic;
+            }
+            p{
+                color: whitesmoke;
+                font-size: 30px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                display: inline;
+            }
+            h4,h6{
+                color: steelblue;
+            }
+        </style>
+    </head>
+    <body>
+        {% for i in blogs %}
+        <h1>{{ i.title }}</h1>
+        <p>{{ i.post }}</p>
+        <h4>{{ i.user }}</h4>
+        <h6>{{ i.date }}</h6>
+        {% endfor %}
+    </body>
+</html>

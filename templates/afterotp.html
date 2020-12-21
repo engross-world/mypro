@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <style>
+            p{
+                font-size: 30px;
+                font-style: italic;
+                color:#abcdef;
+            }
+        </style>
+    </head>
+    <body>
+        {% include "index.html" %}
+        {% block head %}
+        {% endblock %}
+        <h1>{{error}}</h1>
+        <form method="POST" action="/users/checkotp/">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="SUBMIT">
+        </form>
+    </body>
+</html>
+<!--form.as_table, form.as_li, for localhost write /signup/-->

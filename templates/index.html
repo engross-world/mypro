@@ -1,0 +1,62 @@
+{% block head %}
+<html>
+    <head>
+        <title>Index page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        body{
+            background:linear-gradient(rgb(255 80 180 / 60%),rgb(255, 159, 80));
+ 
+        }
+        li{
+            display:inline;
+            padding:10px;
+        }
+        .nav-item{
+            color: black;
+            text-decoration: none;
+        }
+        .nav-item:hover{
+            background-color: black;
+            
+        }
+        h3{
+            text-align: center;
+            padding: 2%,1%,4%; 
+            background:linear-gradient(rgb(106, 80, 255),#f8d1b2);
+      
+        }
+
+        
+        
+    </style>
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/signup/">Signup</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/users/login/">Login</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                </ul>
+              </nav>
+
+            <h3>Welcome to the Blogging Project !!</h3>
+        </div>
+    </body>
+</html>
+{% endblock %}
